@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -30,7 +31,13 @@ public class MainActivity extends Activity  {
         listView=(ListView) findViewById(R.id.listView);
         parser=new XMLParser();
         new RequestTask().execute();
-
+        SwipeRefreshLayout refreshLayout=(SwipeRefreshLayout) findViewById(R.id.refreshLayout);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new RequestTask().execute();
+            }
+        });
     }
 
 
