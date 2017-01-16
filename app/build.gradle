@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.test"
         minSdkVersion 17
-        targetSdkVersion 19
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,6 +25,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-v4:19.1.+'
+    compile 'com.android.support:support-v4:24.1.+'
  //   compile 'org.simpleframework:simple-xml:2.7.1'
 }
